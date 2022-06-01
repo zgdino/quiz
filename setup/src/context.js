@@ -1,3 +1,4 @@
+// axios is a library that handles ajax requests
 import axios from 'axios'
 import React, { useState, useContext, useEffect } from 'react'
 
@@ -24,7 +25,14 @@ const AppProvider = ({ children }) => {
   const [correct, setCorrect] = useState(0)
   const [error, setError] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  
+
+  const fecthQuestions = async (url) => {
+    setLoading(true)
+    setWaiting(false)
+    const response = await axios(url).catch((err) => console.log(err))
+    console.log(response)
+  }
+
   return (
     <AppContext.Provider
       value={{
