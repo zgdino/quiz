@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
     setWaiting(false)
     const response = await axios(url).catch((err) => console.log(err))
     if (response) {
-      const data = response.data.results
+      const data = await response.data.results
       if (data.length > 0) {
         setQuestions(data)
         setLoading(false)
