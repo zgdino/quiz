@@ -12,6 +12,9 @@ function App() {
   if (loading) {
     return <Loading />
   }
+  // destructuring questions for our purpose
+  const {question, incorrect_answers, correct_answer} = questions[0]
+  const answers = [...incorrect_answers, correct_answer]
   return <main>
     Quiz App
   </main>
