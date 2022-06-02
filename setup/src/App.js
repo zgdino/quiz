@@ -5,7 +5,7 @@ import SetupForm from './SetupForm'
 import Loading from './Loading'
 import Modal from './Modal'
 function App() {
-  const { waiting, loading, questions, index, correct } = useGlobalContext()
+  const { questions, loading, waiting, index, correct } = useGlobalContext()
   if (waiting) {
     return <SetupForm />
   }
@@ -19,6 +19,7 @@ function App() {
 
   return <main>
     <Modal />
+    <section className="quiz"></section>
   </main>
 }
 

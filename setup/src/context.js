@@ -19,7 +19,7 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   // if waiting display the form, if not, display the questions
   const [waiting, setWaiting] = useState(true)
-  const [laoding, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [questions, setQuestions] = useState([])
   const [index, setIndex] = useState(0)
   const [correct, setCorrect] = useState(0)
@@ -49,13 +49,13 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchQuestions(tempUrl)
-  }, [])
+  }, [tempUrl])
 
   return (
     <AppContext.Provider
       value={{
         waiting,
-        laoding,
+        loading,
         questions,
         index,
         correct,
