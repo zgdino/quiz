@@ -14,8 +14,8 @@ function App() {
   }
   // destructuring questions for our purpose
   console.log(questions[0]);
-  // const { question, incorrect_answers, correct_answer } = questions[0]
-  // const answers = [...incorrect_answers, correct_answer] → FIGURE OUT WHY YOU ARE GETTING UNDEFINED
+  const { question, incorrect_answers, correct_answer } = questions[0]
+  const answers = [...incorrect_answers, correct_answer]
 
   return <main>
     <Modal />
