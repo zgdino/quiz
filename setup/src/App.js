@@ -13,25 +13,35 @@ function App() {
     return <Loading />
   }
   // destructuring questions for our purpose
-  console.log(questions);
+  console.log(questions)
   const { question, incorrect_answers, correct_answer } = questions[0]
   const answers = [...incorrect_answers, correct_answer]
 
-  return <main>
-    <Modal />
-    <section className="quiz">
-      <p className="correct-answers">
-        correct answers : {correct}/{index}
-      </p>
-      <article className="container">
-        {/* some questions from API are set as an HTML hence dangerouslySetInnerHTML → MUST NOT COME FROM THE USER, possible malicious intent*/}
-        <h2 dangerouslySetInnerHTML={{__html:question}}/>
-        <div className="container">
-          
-        </div>
-      </article>
-    </section>
-  </main>
+  return (
+    <main>
+      <Modal />
+      <section className='quiz'>
+        <p className='correct-answers'>
+          correct answers : {correct}/{index}
+        </p>
+        <article className='container'>
+          {/* some questions from API are set as an HTML hence dangerouslySetInnerHTML → MUST NOT COME FROM THE USER, possible malicious intent*/}
+          <h2 dangerouslySetInnerHTML={{ __html: question }} />
+          <div className='btn-container'>
+            {answers.map((answer, index) => {
+              return (
+                <button
+                  key={index}
+                  className='answer-btn'
+                  dangerouslySetInnerHTML={{ __html: answer }}
+                />
+              )
+            })}
+          </div>
+        </article>
+      </section>
+    </main>
+  )
 }
 
 export default App
