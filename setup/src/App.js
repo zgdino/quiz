@@ -13,7 +13,7 @@ function App() {
     return <Loading />
   }
   // destructuring questions for our purpose
-  console.log(questions[0]);
+  console.log(questions);
   const { question, incorrect_answers, correct_answer } = questions[0]
   const answers = [...incorrect_answers, correct_answer]
 
@@ -23,6 +23,13 @@ function App() {
       <p className="correct-answers">
         correct answers : {correct}/{index}
       </p>
+      <article className="container">
+        {/* some questions from API are set as an HTML hence dangerouslySetInnerHTML → MUST NOT COME FROM THE USER, possible malicious intent*/}
+        <h2 dangerouslySetInnerHTML={{__html:question}}/>
+        <div className="container">
+          
+        </div>
+      </article>
     </section>
   </main>
 }
