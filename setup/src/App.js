@@ -12,9 +12,8 @@ function App() {
   if (loading) {
     return <Loading />
   }
-  // destructuring questions for our purpose
-  console.log(questions)
-  const { question, incorrect_answers, correct_answer } = questions[0]
+  // destructuring questions
+  const { question, incorrect_answers, correct_answer } = questions[index]
   const answers = [...incorrect_answers, correct_answer]
 
   return (
@@ -30,6 +29,7 @@ function App() {
           <div className='btn-container'>
             {answers.map((answer, index) => {
               return (
+                // self closing button because of HTML inside of an API
                 <button
                   key={index}
                   className='answer-btn'
@@ -39,6 +39,7 @@ function App() {
             })}
           </div>
         </article>
+        <button className='next-question'>next question</button>
       </section>
     </main>
   )
