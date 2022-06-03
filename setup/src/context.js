@@ -49,6 +49,7 @@ const AppProvider = ({ children }) => {
   const nextQuestion = () => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1
+      // when index goes over the number of questions open the modal
       if (index > questions.length - 1) {
         // openModal()
         return 0
