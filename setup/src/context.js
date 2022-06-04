@@ -51,20 +51,30 @@ const AppProvider = ({ children }) => {
       const index = oldIndex + 1
       // when index goes over the number of questions open the modal
       if (index > questions.length - 1) {
-        // openModal()
+        openModal()
         return 0
       } else {
         return index
       }
     })
   }
-  // passing in the value thsat later get checked if true and if you look at the use of checkAnswer in onClick within App.js you will understand it better
+  // passing in the value that later get checked if true and if you look at the use of checkAnswer in onClick within App.js you will understand it better; even statement of trueness is treated as a value
   const checkAnswer = (value) => {
     if (value) {
       setCorrect((oldState) => oldState + 1)
     }
     // no matter the correctness or even skipping the questions, go to the next question
     nextQuestion()
+  }
+
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setWaiting(true)
+    setCorrect(0)
+    setIsModalOpen(false)
   }
 
   useEffect(() => {
@@ -83,6 +93,7 @@ const AppProvider = ({ children }) => {
         isModalOpen,
         nextQuestion,
         checkAnswer,
+        closeModal,
       }}
     >
       {children}
