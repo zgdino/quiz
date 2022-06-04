@@ -59,6 +59,14 @@ const AppProvider = ({ children }) => {
     })
   }
 
+  const checkAnswer = (value) => {
+    if (value) {
+      setCorrect((oldState) => oldState + 1)
+    }
+    // no matter the correctness or even skipping the questions, go to the next question
+    nextQuestion()
+  }
+
   useEffect(() => {
     fetchQuestions(tempUrl)
   }, [tempUrl])
@@ -74,6 +82,7 @@ const AppProvider = ({ children }) => {
         error,
         isModalOpen,
         nextQuestion,
+        checkAnswer,
       }}
     >
       {children}
