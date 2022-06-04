@@ -41,6 +41,7 @@ function App() {
                 <button
                   key={index}
                   className='answer-btn'
+                  // passing the statement as an value: check context for explanation
                   onClick={() => checkAnswer(correct_answer === answer)}
                   dangerouslySetInnerHTML={{ __html: answer }}
                 />

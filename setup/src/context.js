@@ -58,7 +58,7 @@ const AppProvider = ({ children }) => {
       }
     })
   }
-
+  // passing in the value thsat later get checked if true and if you look at the use of checkAnswer in onClick within App.js you will understand it better
   const checkAnswer = (value) => {
     if (value) {
       setCorrect((oldState) => oldState + 1)
