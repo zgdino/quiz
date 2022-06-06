@@ -27,8 +27,8 @@ const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [quiz, setQuiz] = useState({
     amount: 10,
-    category: sports,
-    difficulty: easy,
+    category: 'sports',
+    difficulty: 'easy',
   })
 
   const fetchQuestions = async (url) => {

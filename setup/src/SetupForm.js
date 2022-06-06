@@ -22,8 +22,30 @@ const SetupForm = () => {
               max={10}
             />
           </div>
-          {error && <p className='error'>cannot generate questions, please try different options</p>}
-          <button type='submit' onClick={handleSubmit} className='submit-btn'>start</button>
+          {/* category */}
+          <div className='oform-control'>
+            <label htmlFor='category'>category</label>
+            <select
+              name='category'
+              id='category'
+              className='form-input'
+              value={quiz.category}
+              onChange={handleChange}
+            >
+              <option value='sports'>sports</option>
+              <option value='history'>history</option>
+              <option value='politics'>politics</option>
+            </select>
+          </div>
+          {/* if there is an error, display warning message as follows */}
+          {error && (
+            <p className='error'>
+              cannot generate questions, please try different options
+            </p>
+          )}
+          <button type='submit' onClick={handleSubmit} className='submit-btn'>
+            start
+          </button>
         </form>
       </section>
     </main>
