@@ -23,7 +23,7 @@ const SetupForm = () => {
             />
           </div>
           {/* category */}
-          <div className='oform-control'>
+          <div className='form-control'>
             <label htmlFor='category'>category</label>
             <select
               name='category'
@@ -35,6 +35,21 @@ const SetupForm = () => {
               <option value='sports'>sports</option>
               <option value='history'>history</option>
               <option value='politics'>politics</option>
+            </select>
+          </div>
+          {/* difficulty */}
+          <div className='form-control'>
+            <label htmlFor='difficulty'>select difficulty</label>
+            <select
+              name='difficulty'
+              id='difficulty'
+              className='form-input'
+              value={quiz.difficulty}
+              onChange={handleChange}
+            >
+              <option value='easy'>easy</option>
+              <option value='medium'>medium</option>
+              <option value='hard'>hard</option>
             </select>
           </div>
           {/* if there is an error, display warning message as follows */}
