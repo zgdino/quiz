@@ -25,6 +25,7 @@ const AppProvider = ({ children }) => {
   const [correct, setCorrect] = useState(0)
   const [error, setError] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  // setting quiz hook as an object to change its properties dynamically through handleChange function
   const [quiz, setQuiz] = useState({
     amount: 10,
     category: 'sports',
