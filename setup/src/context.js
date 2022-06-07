@@ -85,7 +85,7 @@ const AppProvider = ({ children }) => {
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    // [name] bellow referres to property name we have in the quiz up top, so we can dinamically change the NAME of the property we are assigning value to
+    // [name] bellow referres to property name we have in the quiz up top, so we can dinamically change the NAME of the property(difficulty, category or amount) we are assigning value to
     setQuiz({...quiz, [name]: value})
   }
 
