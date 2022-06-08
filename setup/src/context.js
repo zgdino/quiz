@@ -91,7 +91,7 @@ const AppProvider = ({ children }) => {
   }
 
   const handleSubmit = (e) => {
-    // prevent page refresh every for every submit
+    // prevent page refresh every for every submit; in some projects you want to do it, but not in this one
     e.preventDefault()
     const { amount, difficulty, category } = quiz
 
