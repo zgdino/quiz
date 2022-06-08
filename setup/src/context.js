@@ -87,11 +87,17 @@ const AppProvider = ({ children }) => {
     const name = e.target.name
     const value = e.target.value
     // [name] bellow referres to property name we have in the quiz up top, so we can dinamically change the NAME of the property(difficulty, category or amount) we are assigning value to
-    setQuiz({...quiz, [name]: value})
+    setQuiz({ ...quiz, [name]: value })
   }
 
   const handleSubmit = (e) => {
+    // prevent page refresh every for every submit
     e.prevent.default()
+    const { amount, difficulty, category } = quiz
+    const tempUrl =
+      'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
+    // category pulled from table object from the top  
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}`
   }
 
   return (
