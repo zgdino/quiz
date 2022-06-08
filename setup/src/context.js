@@ -94,10 +94,9 @@ const AppProvider = ({ children }) => {
     // prevent page refresh every for every submit
     e.prevent.default()
     const { amount, difficulty, category } = quiz
-    const tempUrl =
-      'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
-    // category pulled from table object from the top  
-    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}`
+    
+    // category pulled from table object from the top; accessing it dynamically
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`
   }
 
   return (
