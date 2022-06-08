@@ -1,6 +1,6 @@
 // axios is a library that handles ajax requests
 import axios from 'axios'
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 
 const table = {
   sports: 21,
@@ -10,9 +10,9 @@ const table = {
 
 const API_ENDPOINT = 'https://opentdb.com/api.php?'
 
-const url = ''
-const tempUrl =
-  'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
+// const url = ''
+// const tempUrl =
+//   'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
 
 const AppContext = React.createContext()
 
@@ -92,11 +92,13 @@ const AppProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     // prevent page refresh every for every submit
-    e.prevent.default()
+    e.preventDefault()
     const { amount, difficulty, category } = quiz
-    
+
     // category pulled from table object from the top; accessing it dynamically
     const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`
+
+    fetchQuestions(url)
   }
 
   return (
