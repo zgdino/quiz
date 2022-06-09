@@ -27,8 +27,10 @@ function App() {
   let answers = [...incorrect_answers]
   // tempIndex is between [0,3]
   const tempIndex = Math.floor(Math.random() * 4)
+  // if random number is 3 then put the correct answer at the bottom
   if (tempIndex === 3) {
     answers.push(correct_answer)
+  // if random number is 0-2 in that spot push the correct answer
   } else {
     answers.push(answers[tempIndex])
     answers[tempIndex] = correct_answer
