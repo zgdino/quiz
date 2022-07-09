@@ -3,3 +3,8 @@ LEARNED:
 -dangerously set inner HTML and how to extract what we need
 -dynamically assign property name by using "[]"
 -construct the url and call it
+
+# Netlify
+
+- disable chrom extensions
+- add redirect to index.html
