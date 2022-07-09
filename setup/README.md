@@ -6,5 +6,5 @@ LEARNED:
 
 # Netlify
 
-- disable chrom extensions
+- disable chrome extensions
 - add redirect to index.html
