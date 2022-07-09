@@ -8,3 +8,5 @@ LEARNED:
 
 - disable chrome extensions
 - add redirect to index.html
+- remove setup file if you have one
+- make it simple for netlify to access index.html file
